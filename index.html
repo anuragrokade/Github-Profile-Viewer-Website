@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Profile Viewer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>GitHub Profile Viewer</h1>
+    <div class="search-container">
+      <input type="text" id="username" placeholder="Enter GitHub username">
+      <button onclick="getUser()">Get User</button>
+    </div>
+    <div id="error-msg" class="error-msg"></div>
+    <div id="profile" class="profile"></div>
+    <h2>Repositories</h2>
+    <div class="filters">
+      <label for="sort">Sort by:</label>
+      <select id="sort" onchange="sortRepositories()">
+        <option value="name">Name</option>
+        <option value="stars">Stars</option>
+        <option value="updated">Last Updated</option>
+      </select>
+      <label for="filter">Filter by language:</label>
+      <input type="text" id="filter" oninput="filterRepositories()" placeholder="Enter language">
+    </div>
+    <div id="repositories" class="repositories"></div>
+    <div id="pagination" class="pagination"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
